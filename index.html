@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+   <link href="assets/javascript/game.js">
+</head>
+<body>
+   <div>
+     <h1>The Psychic Game</h1>
+     <p class="Instruccions-Text">Instruccions: Enter the letter you think I'm thinking of. Please use lower case. You start with 9 oportunities to guess before the round is over. You can play as many rounds as you want. I don't get tired!!    (I will keep track of Your Wins... and Losses.)</p>
+     <p class="Instruccions-Text"> If you guees it, then you earn 1 in Your Wins. </p>
+     <p class="Instruccions-Text">If you did not guees it, then I'm going to decreace your Guesses Left by 1. I am going to keep track of what letter you have failed in Your Guesses So Far.
+     <p class="Instruccions-Text">I am programed to think my letter before you guess, so trust me, you could have many wins ... Good Luck!! </p>
+     <br>
+     <p id="UserChoice-Text">Guess what letter I'm thinking of?<br>
+     <p id="YourWins-Text">Your Wins:</p>
+     <p id="YourLosses-Text">Your Losses:</p><br>
+     <p id="GuessesLeft-Text">Guesses Left:</p>
+     <p id="YourGuessesSoFar-Text">Your Gueses So Far</p>
+   </div>    
+   
+   <!-- rounds starts as follows:-->
+   <!-- Wins starts on 0 -->
+   <!-- Losses starts on 0 -->
+   <!-- Guesses Left start on 9 -->
+   
+   <!-- the code select a random letter and stored in a variable named compuLetter -->
+   <!-- the code waits for the user to enter a letter-->
+   <!-- the user enter a letter-->
+   <!-- that letter is stored in a variable named userGuess -->
+
+   <!-- the code compare compuLetter against userGuess -->
+   
+ 
+                        <!-- a win round -->
+
+     <!-- if  userGuess is equal to compuLetter, then...-->
+     <!-- Your Wins increases 1, -->
+     <!-- Guesses Left resets to 9, -->
+     <!-- Your Gueses so Far are cleared -->
+     <!-- Your Losses keeps the same, -->
+
+     <!-- if not, then a chance to guess is burnt... -->
+              <!-- Guesses Left decreases 1 -->
+              <!-- GuessesSoFar now shows also the letter failed (userGuess) -->
+   
+
+
+                        <!-- a loss round after 9 chances -->
+
+<!-- if Guesses Left is equal to 0, then... --> 
+              <!-- Your Losses increases 1, -->
+              <!-- Guesses Left reset to 9, --> 
+              <!-- Your Gueses so Far are cleared -->
+
+              <!-- Your Wins keeps the same -->       
+
+ 
+</body>
+</html>
