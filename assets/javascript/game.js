@@ -1,14 +1,16 @@
-     // Selecting a random letter
+console.log("I am connected");
+// Selecting a random letter
 // set what options have the code to pick from
 var possibleCompuLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // the code get its random letter from the established array
 
 // setting the starting values to the object round
 var round = {
+      userGuess: "",
       wins : 0,
       losses :0,
       guessesLeft : 9,
-      guessesSoFar : []
+      guessesSoFar : [],
 };
 
 // creating variables that hold references to the places in the HTML where we want to display things
@@ -24,8 +26,10 @@ var guessesSoFarText = document.getElementById("GuessesSoFar-Text");
 function reset (round) {
       // the property guessesLeft returns to its inicial value,
       round.guessesLeft = 9;
+      console.log("guessesLeft " + round.guessesLeft);
       // the contain of the arrey returns to empty
       round.guessesSoFar = [];
+      console.log("guessesSoFar " + round.guessesSoFar);
       // the return statement is needed to stop the function and give the values to the object, thats why a <div id="round"> is needed in the index file
       return round; 
 }
@@ -34,7 +38,8 @@ function reset (round) {
 //  This function is run whenever the user presses a key.
    document.onkeyup = function(event) {
       // ...in this case, I am creating the flollowing listener:     
-      var userGuess = event.key; 
+      var userGuess = event.key;
+      console.log("userGuess " + userGuess); 
                      //it returns the identifier of the key that was pressed when the key event ocurred.
       // and is assigned to variable userGuess
       
@@ -43,7 +48,8 @@ function reset (round) {
                                                                  // its current value is 26                                                                 
                                                    //it gives me a # between 0 and 1 
                                       //expected result is a # between 0 and 26 to be used as an index #
-      
+      console.log("compuLetter " + compuLetter);
+
                    // when is a win round
       if (userGuess === compuLetter) {
       // wins increases 1,
@@ -57,6 +63,7 @@ function reset (round) {
       round.guessesLeft--;
       // the method push adds the letter picked (userGuess) to the array (guessSoFar)
       round.guessesSoFar.push(userGuess);
+      console.log(round.guessesSoFar);
       }
 
                    // when is a losse round (all chances are used in a round)
@@ -68,11 +75,16 @@ function reset (round) {
       reset (round);    
       }
       // Display the results
-      yourWinsText.textContent = "wins: " + round.wins;
-      yourLossesText.textContent = "losses: " + round.losses;
-      guessesLeftText.textContent = "guesses Left:  " + round.guessesLeft;
-      guessesSoFarText.textContent = "guesses so far : " + round.guessesSoFar;
+      document.querySelector("#YourWins-Text").innerHTML = round.wins;
+      document.querySelector("#YourLosses-Text").innerHTML = round.losses;
+      document.querySelector("#GuessesLeft-Text").innerHTML = round.guessesLeft;
       
+      
+      document.querySelector("#YourGuessesSoFar-Text").innerHTML = round.guessesSoFar;
+      document.querySelector("#UserChoice-Text").innerHTML = round.usesGuesses;
+      document.querySelector("#UserChoice-Text").innerHTML = round.usesGuesses;
 
    };
 
+     
+  
